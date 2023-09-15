@@ -24,7 +24,6 @@ public class BishopBlack implements Figure {
             );
         }
         int size = Math.abs(position.getX() - dest.getX());
-        ;
         Cell[] steps = new Cell[size];
         int posX = position().getX();
         int posY = position().getY();
@@ -38,8 +37,16 @@ public class BishopBlack implements Figure {
         return steps;
     }
 
+    /**
+     * Для проверки входных параметров.
+     *
+     * @param source начальная точка
+     * @param dest   конечная точка
+     * @return true - если параметры валидные.
+     */
     public boolean isDiagonal(Cell source, Cell dest) {
-        return false;
+        return Math.abs(source.getX() - dest.getX())
+                == Math.abs(source.getY() - dest.getY());
     }
 
     @Override
